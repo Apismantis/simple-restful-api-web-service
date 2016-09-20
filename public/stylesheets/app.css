@@ -1,0 +1,58 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.data-row {
+  margin-bottom: -20px;
+  margin-top: 4px;
+}
+
+.center-element {
+  margin: 0 auto;
+}
+
+.table-normal {
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+.input-normal {
+  height: 35px;
+  width: 100%;
+  padding: 4px 4px 4px 8px;
+  border: 1.5px solid #424242;
+  border-radius: 3px;
+}
+
+.modal-body .input-normal {
+  margin-bottom: 20px;
+}
+
+.button-normal {
+  color: #FFF;
+  height: 35px;
+  padding: 4px 16px;
+  margin: 0 auto;
+  border: 1px solid #00cc00;
+  border-radius: 3px;
+  background: #00cc00;
+}
+
+.button-edit {
+  background: #00B7FF;
+  border: none;
+}
+
+.button-delete {
+  background: #ff5640;
+  border: none;
+}
+
+.button-match-parent {
+  width: 100%;
+}
+
+a {
+  color: #00B7FF;
+}

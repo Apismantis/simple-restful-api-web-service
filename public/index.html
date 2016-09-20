@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <!--[if lt IE 7]-->
+<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <!--[if IE 7]-->
+<html lang="en" ng-app="myApp" class="no-js lt-ie9"> <!--[if IE 8]-->
+<html lang="en" ng-app="myApp" class="no-js"> <!--[if gt IE 8]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title ng-bind="pageTitle">The Student Management System</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./stylesheets/app.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+
+<div ng-controller="StudentCtrl" class="wrapper">
+    <div class="center-element">
+        <h1>The Student Management System</h1>
+        <p>Simple Restful API Web service exercise.</p>
+    </div>
+    <div class="row">
+        <ul class="col-md-3">
+            <input type="text" class="input-normal" ng-model="studentId" placeholder="Student ID"/>
+        </ul>
+        <ul class="col-md-3">
+            <input type="text" class="input-normal" ng-model="studentName" placeholder="Student Full Name"/>
+        </ul>
+        <ul class="col-md-3">
+            <input type="text" class="input-normal" ng-model="studentClass" placeholder="Class"/>
+        </ul>
+        <ul class="col-md-2">
+            <button type="button" class="button-normal" ng-click="addNewStudent()">Add New Student</button>
+        </ul>
+    </div>
+    <!--Show all student-->
+    <div class="">
+        <div ng-repeat="student in students">
+            <div class="row data-row">
+                <ul class="col-md-3">
+                    <p>{{student.id}}</p>
+                </ul>
+                <ul class="col-md-3">
+                    <p>{{student.name}}</p>
+                </ul>
+                <ul class="col-md-3">
+                    <p>{{student.class}}</p>
+                </ul>
+                <ul class="col-md-3">
+                    <button type="button" class="button-normal button-edit" data-toggle="modal" data-target="#EditDialog" ng-click="bindingStudent($index)">Edit</button>
+                    <button type="button" class="button-normal button-delete" ng-click="deleteStudent($index)">Delete</button>
+                </ul>
+            </div>
+            <hr/>
+        </div>
+    </div>
+
+    <!--Update Dialog-->
+    <div class="modal fade" id="EditDialog" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Update student information</h4>
+                </div>
+                <div class="modal-body">
+                    <input type="text" class="input-normal" ng-model="student.id" placeholder="Student ID"/>
+                    <input type="text" class="input-normal" ng-model="student.name" placeholder="Student Full Name"/>
+                    <input type="text" class="input-normal" ng-model="student.class" placeholder="Class"/>
+                    <button type="button" class="button-normal button-match-parent" ng-click="updateStudent()">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+<script src="./javascripts/app.js"></script>
+
+</body>
+</html>
